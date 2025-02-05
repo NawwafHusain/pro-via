@@ -1,4 +1,7 @@
-.card::before,
+
+
+@media (min-width :700) {
+    .card::before,
 .card::after{
     content: ' ';
     position: absolute;
@@ -20,5 +23,31 @@
     right: 0;
     z-index: 10;
     border-width: 80px 60px 0 0;
+    border-color: transparent black transparent transparent;
+}
+}
+.video-container::before,
+.video-container::after{
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    
+
+}
+
+.video-container::after{
+    left: 0;
+    border-width: 0 80px 80px 0;
+    border-color: transparent transparent black transparent;
+}
+
+.video-container::before{
+    right: 0;
+    top: 0;
+    z-index: 10;
+    border-width: 0 080px 80px;
     border-color: transparent black transparent transparent;
 }
