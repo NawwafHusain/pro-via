@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import localFont from "next/font/local";
 import Nav from "./components/Nav";
 import ComingSoon from "./ComingSoon";
+import { Toaster } from "react-hot-toast";
 
 const Clash = localFont({ src: "./ClashGrotesk-Variable.woff2" });
 
@@ -22,6 +23,19 @@ export default function RootLayout({ children }) {
         {/* {children} */}
         {/* <Footer /> */}
         <ComingSoon />
+        <Toaster
+          toastOptions={{
+            // Define default options
+            className: "",
+            duration: 5000,
+            removeDelay: 1000,
+            style: {
+              background: "#FFFFF",
+              borderRadius: "0px",
+              padding: "16px",
+            },
+          }}
+        />
       </body>
     </html>
   );
