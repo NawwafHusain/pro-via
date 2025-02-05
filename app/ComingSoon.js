@@ -68,6 +68,7 @@ export default function ComingSoon() {
         <form className="flex gap-4 mt-2 lg:mt-4" onSubmit={handleSubmit}>
           <input
             name="email"
+            type="email"
             placeholder="Email"
             className="px-4 lg:w-[20vw] text-black"
             onChange={(e) => setEmail(e.target.value)}
