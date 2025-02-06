@@ -19,10 +19,16 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/aha6akh.css" />
       </head>
       <body className={`${Clash.className}  antialiased bg-black`}>
-        {/* <Nav /> */}
-        {/* {children} */}
-        {/* <Footer /> */}
-        <ComingSoon />
+        {process.env.NEXT_PUBLIC_COMING_SOON === "true" ? (
+          <ComingSoon />
+        ) : (
+          <>
+            {" "}
+            <Nav /> {children}
+            <Footer />{" "}
+          </>
+        )}
+
         <Toaster
           toastOptions={{
             // Define default options
