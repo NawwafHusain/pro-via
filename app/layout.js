@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Nav from "./components/Nav";
 import ComingSoon from "./ComingSoon";
 import { Toaster } from "react-hot-toast";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const Clash = localFont({ src: "./ClashGrotesk-Variable.woff2" });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/aha6akh.css" />
+        <GoogleAnalytics gaId="G-SYNVHLLMPP" />
       </head>
       <body className={`${Clash.className}  antialiased bg-black`}>
         {process.env.NEXT_PUBLIC_COMING_SOON === "true" ? (

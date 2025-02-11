@@ -41,7 +41,7 @@ export default function Nav() {
         end: "end end",
         toggleActions: "play none reverse none",
       },
-      height: "8rem",
+      height: "6rem",
       top: "0.5rem",
     });
   });

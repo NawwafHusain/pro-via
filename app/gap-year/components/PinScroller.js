@@ -14,6 +14,10 @@ export default function PinScroller({ content }) {
 
   gsap.registerPlugin(ScrollTrigger);
 
+  useEffect(() => {
+    console.log(activeIndex);
+  }, [activeIndex]);
+
   useGSAP(
     () => {
       const sections = cardRefs.current;
@@ -25,7 +29,7 @@ export default function PinScroller({ content }) {
             trigger: section,
             start: "top 60%",
             end: "center 45%",
-            //markers: true,
+            markers: true,
             toggleActions: "play reverse play reverse",
             onEnter: () => setActiveIndex(index),
             onLeaveBack: () => setActiveIndex(index - 1),
@@ -40,7 +44,7 @@ export default function PinScroller({ content }) {
           end: "300% 100%",
           pin: true,
           scrub: true,
-          markers: true,
+          //markers: true,
         },
       });
     },
@@ -77,10 +81,10 @@ export default function PinScroller({ content }) {
           className="min-w-[38vw] hidden lg:inline relative min-h-[50vh] right-0 video-container"
           ref={imageRef}
         >
-          {content[activeIndex]?.content ?? (
+          {content[activeIndex].content ?? (
             <Image
               fill
-              src={"/images/Maskgroup.png"}
+              src={"/images/AlexMadrid.png"}
               className="object-contain"
               alt="authentic spanish football"
             />
