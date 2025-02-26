@@ -133,7 +133,7 @@ export default function Home() {
             <Image
               fill
               className="object-cover"
-              src="/images/IMG_5122.jpg"
+              src="/images/IMG_5122.JPG"
               alt="Football game"
             />
             <div className="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-black to-transparent from-30% " />
@@ -192,7 +192,7 @@ export default function Home() {
           <ContactForm
             color="white"
             inlineOnMobile={true}
-            className={"h-[60vh] lg:h-auto"}
+            className={"h-[60vh] lg:h-full"}
           />
         </div>
       </section>

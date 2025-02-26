@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row text-white gap-10 lg:justify-end items-center lg:items-start text-center lg:text-left">
+        <div className="flex flex-1 flex-col lg:flex-row text-white gap-6 lg:justify-end items-center lg:items-start text-center lg:text-left">
           <div className="flex flex-col items-center lg:items-start gap-2">
             <p className="text-lg font-bold relative">Quick Links</p>
             <div className="lg:w-[10vw] w-[40vw] bg-white h-[0.1px]" />
@@ -86,9 +86,10 @@ export default function Footer() {
               @proviaacademy
             </a>
           </div>
-          <p className="text-white relative lg:w-[35%]">
-            Pro-Vía Academy, LLC 3655 Torrance Blvd, 3rd floor, #6001 Torrance,
-            CA 90503 United States
+          <p className="text-white relative lg:w-[37%] ">
+            3655 Torrance Blvd, 3rd floor, #6001 <br />
+            Torrance, CA 90503
+            <br /> United States
           </p>
         </div>
       </div>

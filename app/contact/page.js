@@ -116,9 +116,10 @@ export default function Page() {
           </div>
           <div className="flex flex-col gap-2  p-4 border-l-2 border-white ">
             <p className="font-semibold text-2xl mb-2">Mailing Address </p>
-            <p className=" relative lg:w-[35%]">
-              Pro-Vía Academy, LLC 3655 Torrance Blvd, 3rd floor, #6001
-              Torrance, CA 90503 United States
+            <p className=" relative ">
+              3655 Torrance Blvd, 3rd floor, #6001 <br />
+              Torrance, CA 90503 <br />
+              United States
             </p>
           </div>
         </div>
