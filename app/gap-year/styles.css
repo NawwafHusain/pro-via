@@ -56,3 +56,33 @@
     font-weight: bold;
     font-size: 1.2rem;
 }
+
+
+.hero-carousel-item::before,
+.hero-carousel-item::after{
+    content: ' ';
+    position: absolute;
+    z-index: 10;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    
+
+}
+
+.hero-carousel-item::after{
+    bottom:0;
+    left: 0;
+    border-width: 0 80px 80px 0;
+    border-color: transparent transparent black transparent;
+}
+
+.hero-carousel-item::before{
+    right: 0;
+    top: 0;
+    z-index: 10;
+    border-width: 0 080px 80px;
+    border-color: transparent black transparent transparent;
+}
+
+

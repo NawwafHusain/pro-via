@@ -1,101 +1,201 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Link from "next/link";
 import Image from "next/image";
+
+import ContactForm from "./components/contactForm";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main>
+      <section className="w-screen h-[90vh] py-10">
+        <Carousel className="w-full h-full text-white lg:px-24 px-4 relative">
+          <CarouselContent className="-m-4 lg:-ml-24 h-full relative">
+            <CarouselItem className="relative p-5 flex flex-col lg:flex-row lg:justify-between justify-end items-center lg:items-end pl-4 lg:pl-24  h-full ">
+              <Image
+                src={"/images/hero.jpg"}
+                fill
+                alt="hero"
+                className="object-cover hero-carousel-item"
+              />
+              <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black "></div>
+              <div className="flex flex-col gap-2  py-4 lg:py-10 lg:pl-10 pl-4 relative">
+                <p className="text-xl">The Pro-Vía Academy</p>
+                <h2 className={`font-ethn text-2xl lg:text-5xl`}>
+                  Gap Year Program
+                </h2>
+                <p className="lg:w-[60%] w-[100%]">
+                  Join Pro-Viá Academy&apos;s elite ten-month residency in
+                  Madrid, where ambition meets opportunity. Train with
+                  world-class coaches, compete in top Spanish leagues, and
+                  enrich...{" "}
+                </p>
+              </div>
+              <div className="flex gap-1 relative lg:py-10 lg:pr-10 ">
+                <Link
+                  href={"/gap-year"}
+                  className="w-max py-3 px-3 lg:px-5 font-ethn border-2 border-white font-thin  lg:text-lg"
+                >
+                  Learn More
+                </Link>
+                <Link
+                  href={"/apply"}
+                  className="w-max py-3 px-3 lg:px-5 font-ethn bg-white font-light text-black lg:text-lg hover:scale-105 transition-all duration-300"
+                >
+                  Apply Now
+                </Link>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="relative p-5 flex flex-col lg:flex-row lg:justify-between justify-end items-center lg:items-end pl-4 lg:pl-24  h-full ">
+              <Image
+                src={"/images/chile.jpg"}
+                fill
+                alt="hero"
+                className="object-cover hero-carousel-item lg:content-center object-right"
+              />
+              <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black "></div>
+              <div className="flex flex-col gap-2 py-4 lg:py-10 lg:pl-10 pl-4 relative">
+                <p className="text-xl">The Pro-Vía Academy</p>
+                <h2 className={`font-ethn text-2xl lg:text-5xl`}>
+                  Masters Program
+                </h2>
+                <p className="lg:w-[60%] w-[100%]">
+                  Join Pro-Viá Academy&apos;s elite two-year program in Madrid,
+                  where ambition meets opportunity. Train with world-class
+                  coaches, compete in top Spanish leagues, and enrich...{" "}
+                </p>
+              </div>
+              <div className="flex gap-1 relative lg:py-10 lg:pr-10 ">
+                <Link
+                  href={"/gap-year"}
+                  className="w-max py-3 px-3 lg:px-5 font-ethn border-2 border-white font-thin  lg:text-lg"
+                >
+                  Learn More
+                </Link>
+                <Link
+                  href={"/apply"}
+                  className="w-max py-3 px-3 lg:px-5 font-ethn bg-white font-light text-black lg:text-lg hover:scale-105 transition-all duration-300"
+                >
+                  Apply Now
+                </Link>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselNext className="top-1/2 -translate-y-1/2 right-4 lg:right-24 z-10 " />
+          <CarouselPrevious className="top-1/2 -translate-y-1/2 left-4 lg:left-24 z-10 " />
+        </Carousel>
+      </section>
+      <section className="bg-white w-screen py-8 lg:py-16 lg:px-24 px-4">
+        <h2 className="font-ethn lg:text-5xl text-3xl">Why Pro-Vía Academy?</h2>
+        <div className="flex flex-col-reverse lg:flex-row justify-between mt-8 ">
+          <div className="lg:w-[70%] flex flex-col lg:justify-between items-center gap-y-10 lg:gap-y-0 lg:items-end pr-4">
+            <p className="text-lg lg:mt-0 mt-4">
+              At Pro-Vía Academy, our mission is to empower elite
+              student-athletes to achieve their fullest potential on and off the
+              field. By providing world-class soccer experience, academic
+              enrichment, and cultural immersion in Spain, we cultivate the
+              skills, discipline, and global perspective necessary to succeed in
+              collegiate, professional, and life endeavors.
+            </p>
+            <Link
+              href={"/about"}
+              className="w-max py-3 px-3 lg:px-5 font-ethn bg-white border-black border-2 hover:bg-black hover:text-white font-light text-black lg:text-lg hover:scale-105 transition-all duration-300"
+            >
+              Our Mission and Vision
+            </Link>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Image
+            src={"/images/group.jpg"}
+            width={500}
+            height={500}
+            alt="why"
+            className="object-cover h-[60vh] hero-container-image"
+          />
+        </div>
+      </section>
+      <section className="relative  flex flex-col lg:px-24 lg:py-16 py-8 px-4 lg:h-auto  box-content gap-4 lg:gap-10  ">
+        <h2 className={`font-ethn text-white lg:text-5xl text-3xl relative`}>
+          Our Programs
+        </h2>
+        <div className="w-full flex lg:flex-row flex-col justify-between gap-8 lg:h-[40vh] ">
+          <Link
+            href="/gap-year"
+            className=" hover:scale-105 transition-all  duration-300 flex-1 overflow-clip items-center rounded-xl px-4 lg:px-10 text-center shadow-white shadow-sm text-white flex justify-end lg:gap-4 gap-2 pb-4 pt-24 lg:pt-0 lg:pb-10 flex-col relative"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              fill
+              className="object-cover"
+              src="/images/IMG_5122.jpg"
+              alt="Football game"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <div className="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-black to-transparent from-30% " />
+            <h3 className={`relative font-ethn text-xl lg:text-4xl`}>
+              Gap year Program
+            </h3>
+            <p className="relative text-sm lg:text-base">
+              Join our flagship program and immerse yourself in the world of
+              Spanish football for a full season while earning credits towards
+              your degree.
+            </p>
+          </Link>
+
+          <Link
+            href="/programs/masters"
+            className=" hover:scale-105 transition-all  duration-300 h-full flex-2 lg:w-[20vw] overflow-clip items-center rounded-xl px-4 lg:px-10 text-center shadow-white shadow-sm text-white flex justify-end lg:gap-4 gap-2 pb-4 pt-24 lg:pt-0 lg:pb-10 flex-col relative"
           >
-            Read our docs
-          </a>
+            <Image
+              fill
+              className="object-cover object-right"
+              src="/images/trescantos.webp"
+              alt="Tres Cantos vs Athletico Madrid"
+            />
+            <div className="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-black to-transparent from-30% " />
+            <h3 className={`relative font-ethn text-xl lg:text-4xl`}>
+              Masters Program
+            </h3>
+            <p className="relative text-sm lg:text-base">
+              Join our flagship program and immerse yourself in the world of
+              Spanish football for a full season.
+            </p>
+          </Link>
+          <Link
+            href="/programs"
+            className=" hover:scale-105 transition-all duration-300 flex-2 text-xl lg:text-4xl overflow-clip items-center rounded-xl px-10 text-center shadow-white shadow-sm text-white flex justify-center gap-4 lg:pt-0 pb-10 pt-10 lg:pb-10 flex-col relative"
+          >
+            <div className="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-black to-transparent from-30% " />
+            <h3 className={`relative font-ethn `}>
+              View All <br /> Programs
+            </h3>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+      <section className="w-screen lg:h-screen py-16 bg-white lg:px-24 px-4 flex flex-col lg:flex-row lg:justify-between">
+        <div>
+          <h3 className={`relative font-ethn text-4xl`}>Got any question?</h3>
+          <p className="mt-2 text-lg">
+            <span className="font-medium">Get in touch with us!</span> Fill this
+            form or find more ways to contact us{" "}
+            <a href="/contact" className="underline">
+              here
+            </a>
+          </p>
+        </div>
+        <div className="flex flex-col gap-4 w-full lg:w-1/2 h-full p-4 ">
+          <ContactForm
+            color="white"
+            inlineOnMobile={true}
+            className={"h-[60vh] lg:h-auto"}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </section>
+    </main>
   );
 }

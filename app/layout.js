@@ -9,7 +9,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 const Clash = localFont({ src: "./ClashGrotesk-Variable.woff2" });
 
 export const metadata = {
-  title: "Pro-Vía Academy: Elite Football Programs in Spain",
+  title: "Elite Football Programs in Madrid | Pro-Vía Academy",
   description:
     "Pro-Vía Academy offers top-tier football programs in Spain, combining professional training, elite coaching, and international exposure. Designed for aspiring athletes, our programs help players develop their skills, compete at the highest levels, and take their football careers to the next stage.",
 };
