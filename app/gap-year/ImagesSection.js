@@ -11,7 +11,13 @@ import Image from "next/image";
 
 export default function ImagesSection() {
   const [football, setFootball] = useState(true);
-  const footballPhotos = [];
+  const footballPhotos = [
+    "/images/trescantos.webp",
+    "/images/IMG_5122.JPG",
+    "/images/chile.jpg",
+    "/images/team2.jpeg",
+    "/images/group.jpg",
+  ];
   const residencePhotos = [
     "/images/MiCampus/1.png",
     "/images/MiCampus/2.png",
@@ -32,40 +38,51 @@ export default function ImagesSection() {
   ];
   return (
     <section className="w-screen h-screen flex flex-col  bg-black py-24">
-      <div className="w-full flex flex-col lg:flex-row px-24">
+      <div className="w-full flex flex-col lg:flex-row px-24 relative">
+        <div
+          className={`w-[calc(50%-6rem)] h-full bg-white absolute tabs ${
+            football ? "left-24" : "left-[calc(50%)]"
+          } transition-all duration-500`}
+        />
         <button
           className={`${
-            football
-              ? "bg-white text-black border-white"
-              : "text-white border-white"
-          } border-2 flex-1 py-10`}
+            football ? " text-black " : "text-white "
+          }  flex-1 py-10 relative font-ethn text-2xl`}
           onClick={() => setFootball(true)}
         >
           Football
         </button>
         <button
           className={`${
-            !football
-              ? "bg-white text-black border-white"
-              : "text-white border-white"
-          } border-2  flex-1`}
+            !football ? " text-black " : "text-white "
+          }   flex-1 relative font-ethn text-2xl`}
           onClick={() => setFootball(false)}
         >
           Residence
         </button>
       </div>
-      <Carousel className="w-full flex-1 justify-self-stretch px-24 mt-20">
+      <Carousel
+        className="w-full flex-1 justify-self-stretch px-24 mt-10"
+        options={{ loop: true }}
+      >
         <CarouselContent className="-ml-4 ">
           {football
             ? footballPhotos.map((photo, index) => (
                 <CarouselItem className="pl-4 basis-1/3  " key={index}>
-                  <div className="bg-white rounded-md flex-1 aspect-square pl-4" />
+                  <div className=" rounded-md flex-1 aspect-square pl-4 relative overflow-hidden">
+                    <Image
+                      src={photo}
+                      alt={`residence photo #${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>{" "}
                 </CarouselItem>
               ))
             : residencePhotos.map((photo, index) => (
                 <CarouselItem className="pl-4 basis-1/3  " key={index}>
                   {/*put images here*/}
-                  <div className="bg-white rounded-md flex-1 aspect-square pl-4 relative overflow-hidden">
+                  <div className=" rounded-md flex-1 aspect-square pl-4 relative overflow-hidden">
                     <Image
                       src={photo}
                       alt={`residence photo #${index + 1}`}
@@ -75,9 +92,6 @@ export default function ImagesSection() {
                   </div>
                 </CarouselItem>
               ))}
-          <CarouselItem className="pl-4 basis-1/3  ">
-            <div className="bg-white rounded-md flex-1 aspect-square pl-4" />
-          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious className="bg-white left-20 top-1/2 -translate-y-1/2 z-10" />
         <CarouselNext className="bg-white  right-20 top-1/2 -translate-y-1/2 z-10" />

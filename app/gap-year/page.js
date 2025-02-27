@@ -72,7 +72,7 @@ const content = [
   {
     title: "Authentic Spanish Football",
     description:
-      "Experience football at its highest level by training and competing with established Spanish clubs in official league matches. Our players are fully immersed in the fast-paced, technical, and tactical style of Spanish football, gaining real match experience that prepares them for the demands of U.S. college soccer.",
+      "Experience football at its highest level by training and competing with established Spanish clubs in official league matches. Our players are fully immersed in the fast-paced, technical, and tactical style of Spanish football, gaining real match experience that prepares them for the demands of U.S. college football or beyond.",
     content: (
       <Image
         fill
@@ -85,7 +85,7 @@ const content = [
   {
     title: "Specialized Training",
     description:
-      "Train like a pro with UEFA-certified coaches who tailor sessions to refine technical skills, tactical awareness, and physical conditioning. With a focus on speed of play, positional intelligence, and adaptability, our program ensures players develop the attributes college coaches seek.",
+      "Train like a pro with UEFA-certified coaches who tailor sessions to refine technical skills, tactical awareness, and physical conditioning. With a focus on speed of play, positional intelligence, and adaptability, our program ensures players develop the attributes college and professional coaches seek.",
     content: (
       <Image
         fill
@@ -98,7 +98,7 @@ const content = [
   {
     title: "Player Profile and Development",
     description:
-      "Every athlete undergoes continuous assessment and performance tracking to highlight strengths and areas for improvement. Our Sporting Directors work closely with players to build standout profiles for U.S. college recruitment, providing video analysis, scouting reports, and personalized guidance.",
+      "Every athlete undergoes continuous assessment and performance tracking to highlight strengths and areas for improvement. Our Sporting Directors work closely with players to build standout profiles for U.S. college and professional recruitment, providing video analysis, scouting reports, and personalized guidance.",
     content: (
       <Image
         fill
@@ -157,7 +157,7 @@ const IncludedItems = [
       "Individualized training plans",
       "Access to high-level training facilities",
       "Strength and conditioning sessions",
-      "Continuos performance tracking and development",
+      "Continuous performance tracking and development",
       "Exposure to scouts and professional networks",
       "Video analysis and performance feedback",
       "Regularly updated public player profile",
@@ -254,9 +254,10 @@ export default function page() {
             Join Pro-Viá Academy&apos;s elite ten-month residency in Madrid,
             where ambition meets opportunity. Train with world-class coaches,
             compete in top Spanish leagues, and enrich your academics with
-            NCAA-accredited courses. Immerse yourself in football culture,
-            elevate your skills, and prepare for a future in collegiate or
-            professional soccer.
+            accredited courses. Additionally, due to recent changes, players
+            will not lose any NCCA eligibility playing in Spain! Immerse
+            yourself in football culture, elevate your skills, and prepare for a
+            future in collegiate or professional soccer.
           </p>
           <p className="lg:w-3/5 mt-2 lg:mt-4 lg:text-lg text-sm lg:hidden">
             Join Pro-Viá Academy&apos;s elite ten-month residency in Madrid,
@@ -316,6 +317,43 @@ export default function page() {
           "/images/clubs/sslr.png",
         ]}
       />
+      <section className="w-screen lg:h-[90vh] relative bg-white flex flex-col justify-between lg:flex-row ">
+        <div className="flex flex-col flex-1 lg:py-24 pt-24 pb-0 mt-10">
+          <h2 className="lg:text-5xl font-ethn text-3xl bg-black text-white lg:py-8 py-3 pl-4 lg:pl-24 lg:w-[80%] heading-crop relative">
+            Alex Araneda
+          </h2>
+          <p className="lg:text-5xl text-2xl text-black font-ethn lg:pl-24 pl-4 lg:pr-0  mt-2">
+            {" "}
+            <span className="lg:text-2xl text-lg">Signed</span>
+            <br />
+            phoenix rising
+          </p>
+          <p className="lg:pl-24 pl-4 lg:pr-0 pr-4 text-xl mt-2">
+            Alex joined Craq FC residency (now Pro-Vía Academy, LLC) for the
+            2023/2024 season. He was playing for Tres Cantos CDF senior team in
+            the Spanish 3 RFEF leauge. Through Pro-Vía&apos;s deeply rooted
+            network, Alex landed a trail at Phoenix Rising (USL) which he
+            converted into a pro contract.
+          </p>
+          <div className="flex gap-4 mt-2 lg:mt-4">
+            <Image
+              src={"/images/pRising.png"}
+              width={100}
+              height={100}
+              alt="phoenix rising"
+              className="lg:ml-24 ml-4 lg:mr-0 mr-4 mt-8"
+            />
+          </div>
+        </div>
+        <Image
+          src={"/images/chile.png"}
+          className="lg:w-[40vw] lg:h-full lg:mt-16 h-[70vh]  object-contain"
+          width={500}
+          height={1000}
+          alt="Gap year program background hidden"
+        />
+        <div className="bg-gradient-to-b from-black to-10% absolute top-0 left-0 w-screen h-full" />
+      </section>
       {/*OPTION 1 With sticky scroll */}
       {/* <h2 className="font-ethn lg:text-5xl text-xl text-white px-4 lg:px-24 mt-24 mb-5">
         Why Choose Pro-Vía Academy&apos;s Gap-Year Program
@@ -363,13 +401,14 @@ export default function page() {
               );
             })}
           </Accordion>
-          <Link
-            href={"#about"}
+          <a
+            href={"/Gap-year-booklet.pdf"}
+            download
             className="lg:w-max w-full bg-white text-center text-black hover:bg-black hover:border-white border-black border-2 hover:text-white py-4 px-8 text-xl font-ethn absolute bottom-8 right-24"
           >
             Download the <br />
             Program Brochure
-          </Link>
+          </a>
         </div>
       </section>
       <ImagesSection />
@@ -378,12 +417,15 @@ export default function page() {
         <h2 className="lg:text-4xl text-xl font-ethn text-left w-full">
           What&apos;s Included in the Gap-year Program
         </h2>
-        <div className="flex flex-col lg:h-[80vh] gap-y-4 gap-x-4 lg:flex-wrap max-w-full mt-10">
+        <div className="flex flex-col lg:h-[80vh] gap-y-4 gap-x-2 lg:flex-wrap max-w-full mt-10">
           {IncludedItems.map((item, index) => (
             <div className="flex-col flex" key={item.title + index}>
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
               {item.items.map((item, index) => (
-                <p className="text-lg flex gap-2 text-wrap" key={item + index}>
+                <p
+                  className="text-lg flex gap-2 text-wrap max-w-[25vw]"
+                  key={item + index}
+                >
                   <Shield className="w-5 h-5 " />
                   {item}
                 </p>

@@ -85,4 +85,52 @@
     border-color: transparent black transparent transparent;
 }
 
+.heading-crop::before,
+.heading-crop::after{
+    content: ' ';
+    position: absolute;
+    z-index: 100;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
 
+.heading-crop::after{
+    bottom:0;
+    right: 0;
+    border-width: 2.5rem 2.5rem 0 0;
+    border-color: transparent white transparent  transparent;
+}
+
+.heading-crop::before{
+    right: 0;
+    top: 0;
+    z-index: 10;
+    border-width: 0 2.5rem 2.5rem 0;
+    border-color: transparent white transparent transparent;
+}
+
+.tabs::before,
+.tabs::after{
+    content: ' ';
+    position: absolute;
+    z-index: 100;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.tabs::after{
+    top:0;
+    left: 0;
+    border-width: 0 2.5rem 2.5rem 2.5rem;
+    border-color: transparent transparent transparent  black;
+}
+
+.tabs::before{
+    right: 0;
+    top: 0;
+    z-index: 10;
+    border-width: 0 2.5rem 2.5rem 0;
+    border-color: transparent black transparent transparent;
+}

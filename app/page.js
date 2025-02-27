@@ -74,7 +74,7 @@ export default function Home() {
               </div>
               <div className="flex gap-1 relative lg:py-10 lg:pr-10 ">
                 <Link
-                  href={"/gap-year"}
+                  href={"/masters"}
                   className="w-max py-3 px-3 lg:px-5 font-ethn border-2 border-white font-thin  lg:text-lg"
                 >
                   Learn More
@@ -99,7 +99,7 @@ export default function Home() {
             <p className="text-lg lg:mt-0 mt-4">
               At Pro-Vía Academy, our mission is to empower elite
               student-athletes to achieve their fullest potential on and off the
-              field. By providing world-class soccer experience, academic
+              field. By providing world-class football experience, academic
               enrichment, and cultural immersion in Spain, we cultivate the
               skills, discipline, and global perspective necessary to succeed in
               collegiate, professional, and life endeavors.
@@ -148,8 +148,8 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/programs/masters"
-            className=" hover:scale-105 transition-all  duration-300 h-full flex-2 lg:w-[20vw] overflow-clip items-center rounded-xl px-4 lg:px-10 text-center shadow-white shadow-sm text-white flex justify-end lg:gap-4 gap-2 pb-4 pt-24 lg:pt-0 lg:pb-10 flex-col relative"
+            href="/masters"
+            className=" hover:scale-105 transition-all  duration-300 h-full flex-2 lg:w-[35vw] overflow-clip items-center rounded-xl px-4 lg:px-10 text-center shadow-white shadow-sm text-white flex justify-end lg:gap-4 gap-2 pb-4 pt-24 lg:pt-0 lg:pb-10 flex-col relative"
           >
             <Image
               fill
@@ -159,14 +159,15 @@ export default function Home() {
             />
             <div className="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-black to-transparent from-30% " />
             <h3 className={`relative font-ethn text-xl lg:text-4xl`}>
-              Masters Program
+              Master&apos;s Program
             </h3>
             <p className="relative text-sm lg:text-base">
-              Join our flagship program and immerse yourself in the world of
-              Spanish football for a full season.
+              Join our 2-year masters program and immerse yourself in the world
+              of Spanish football for a two seasons while earning your masters
+              degree!
             </p>
           </Link>
-          <Link
+          {/* <Link
             href="/programs"
             className=" hover:scale-105 transition-all duration-300 flex-2 text-xl lg:text-4xl overflow-clip items-center rounded-xl px-10 text-center shadow-white shadow-sm text-white flex justify-center gap-4 lg:pt-0 pb-10 pt-10 lg:pb-10 flex-col relative"
           >
@@ -174,7 +175,7 @@ export default function Home() {
             <h3 className={`relative font-ethn `}>
               View All <br /> Programs
             </h3>
-          </Link>
+          </Link> */}
         </div>
       </section>
       <section className="w-screen lg:h-screen py-16 bg-white lg:px-24 px-4 flex flex-col lg:flex-row lg:justify-between">
