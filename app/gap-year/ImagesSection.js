@@ -38,16 +38,16 @@ export default function ImagesSection() {
   ];
   return (
     <section className="w-screen h-screen flex flex-col  bg-black py-24">
-      <div className="w-full flex flex-col lg:flex-row px-24 relative">
+      <div className="w-full flex flex-row lg:px-24 px-4 relative">
         <div
-          className={`w-[calc(50%-6rem)] h-full bg-white absolute tabs ${
-            football ? "left-24" : "left-[calc(50%)]"
+          className={`lg:w-[calc(50%-6rem)] w-[calc(50%-1rem)] h-full bg-white absolute tabs ${
+            football ? "lg:left-24 left-4" : "left-[calc(50%)]"
           } transition-all duration-500`}
         />
         <button
           className={`${
             football ? " text-black " : "text-white "
-          }  flex-1 py-10 relative font-ethn text-2xl`}
+          }  flex-1 py-10 relative font-ethn text-lg lg:text-2xl`}
           onClick={() => setFootball(true)}
         >
           Football
@@ -55,20 +55,20 @@ export default function ImagesSection() {
         <button
           className={`${
             !football ? " text-black " : "text-white "
-          }   flex-1 relative font-ethn text-2xl`}
+          }   flex-1 relative font-ethn text-lg lg:text-2xl`}
           onClick={() => setFootball(false)}
         >
           Residence
         </button>
       </div>
       <Carousel
-        className="w-full flex-1 justify-self-stretch px-24 mt-10"
+        className="w-full flex-1 justify-self-stretch lg:px-24 px-4 mt-10"
         options={{ loop: true }}
       >
         <CarouselContent className="-ml-4 ">
           {football
             ? footballPhotos.map((photo, index) => (
-                <CarouselItem className="pl-4 basis-1/3  " key={index}>
+                <CarouselItem className="pl-4 lg:basis-1/3  " key={index}>
                   <div className=" rounded-md flex-1 aspect-square pl-4 relative overflow-hidden">
                     <Image
                       src={photo}
@@ -80,7 +80,7 @@ export default function ImagesSection() {
                 </CarouselItem>
               ))
             : residencePhotos.map((photo, index) => (
-                <CarouselItem className="pl-4 basis-1/3  " key={index}>
+                <CarouselItem className="pl-4 lg:basis-1/3  " key={index}>
                   {/*put images here*/}
                   <div className=" rounded-md flex-1 aspect-square pl-4 relative overflow-hidden">
                     <Image
@@ -93,8 +93,8 @@ export default function ImagesSection() {
                 </CarouselItem>
               ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-white left-20 top-1/2 -translate-y-1/2 z-10" />
-        <CarouselNext className="bg-white  right-20 top-1/2 -translate-y-1/2 z-10" />
+        <CarouselPrevious className="bg-white lg:left-20 left-4 top-1/2 -translate-y-1/2 z-10" />
+        <CarouselNext className="bg-white  lg:right-20 right-4 top-1/2 -translate-y-1/2 z-10" />
       </Carousel>
     </section>
   );
