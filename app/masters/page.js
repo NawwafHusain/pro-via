@@ -344,7 +344,7 @@ export default function page() {
           <p className="lg:w-3/5 mt-2 lg:mt-4 lg:text-lg text-sm lg:hidden">
             Take your football career and education to the next level with
             Pro-Viá Academy&apos;s exclusive Master&apos;s Program in Spain.
-            Over two academic years in Madrid, youD&apos;ll earn a Master&apos;s
+            Over two academic years in Madrid, you&apos;ll earn a Master&apos;s
             Degree, improve your Spanish language skills, and train at a high
             level to stay competitive in football. With additional
             certifications like TEFL and Spanish proficiency from the Instituto
@@ -370,7 +370,7 @@ export default function page() {
       {/*About Section */}
       <section className="lg:h-screen w-screen relative lg:py-0 py-10 flex items-center justify-center flex-col-reverse lg:flex-row px-4 lg:px-0">
         <Image
-          src={"/images/Background2.png"}
+          src={"/images/background2.png"}
           className="w-full h-full hidden lg:block"
           fill
           alt="Gap year program background hidden"
