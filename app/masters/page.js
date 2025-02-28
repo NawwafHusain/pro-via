@@ -465,13 +465,13 @@ export default function page() {
               );
             })}
           </Accordion>
-          <Link
+          {/* <Link
             href={"#about"}
             className="lg:w-max w-full bg-white text-center text-black hover:bg-black hover:border-white border-black border-2 hover:text-white py-4 px-8 text-xl font-ethn absolute bottom-8 right-24"
           >
             Download the <br />
             Program Brochure
-          </Link>
+          </Link> */}
         </div>
       </section>
       <ImagesSection />
