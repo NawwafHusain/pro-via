@@ -8,6 +8,16 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowDown, ArrowUpWideNarrow } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
 
 export default function Nav() {
   const navRef = useRef();
@@ -61,38 +71,60 @@ export default function Nav() {
         className="w-screen bg-white lg:py-5 py-1 pr-2 lg:p-0 fixed z-50 flex lg:flex-row flex-row lg:justify-center items-center  justify-end"
         ref={navRef}
       >
-        <ul
-          className="w-[34vw] lg:flex justify-between h-full z-10 hidden "
-          ref={listRef}
-        >
-          <div className="flex items-center gap-10">
-            <Link href="/">
-              <li className="font-medium text-lg hover:font-bold transition-all duration-300">
-                Home
-              </li>
-            </Link>
-            <Link href={"/programs"}>
-              <li className="font-medium text-lg hover:font-bold transition-all duration-300">
-                Programs
-              </li>
-            </Link>
-          </div>
-          <div className="flex items-center gap-10">
-            <Link href="/about">
-              <li className="font-medium text-lg hover:font-bold transition-all duration-300">
-                About
-              </li>
-            </Link>
-            <Link href="/contact">
-              <li className="font-medium text-lg hover:font-bold transition-all duration-300">
-                Contact
-              </li>
-            </Link>
-          </div>
-        </ul>
+        <NavigationMenu>
+          <NavigationMenuList
+            className="w-[34vw] lg:flex justify-between h-full z-10 hidden bg-transparent"
+            ref={listRef}
+          >
+            <div className="flex items-center gap-5">
+              <Link href="/">
+                <li className="font-medium text-lg hover:font-bold transition-all duration-300">
+                  Home
+                </li>
+              </Link>
+
+              <NavigationMenuItem className="relative w-min bg-transparent hover:bg-transparent">
+                <Link href={"/programs"}>
+                  <NavigationMenuTrigger className="font-medium text-lg hover:font-bold transition-all duration-300 hover:bg-white">
+                    Programs
+                  </NavigationMenuTrigger>
+                </Link>
+                <NavigationMenuContent className="flex flex-col gap-3 w-max-content  rounded-none bg-white ">
+                  <Link
+                    href={"/gap-year"}
+                    className="w-max hover:bg-slate-200 px-4 py-2"
+                  >
+                    <NavigationMenuLink>Gap Year Program</NavigationMenuLink>
+                  </Link>
+
+                  <Link
+                    href={"/masters"}
+                    className="w-max hover:bg-slate-200 px-4 py-2"
+                  >
+                    <NavigationMenuLink>
+                      Master&apos;s Program
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </div>
+            <div className="flex items-center gap-10">
+              <Link href="/about">
+                <li className="font-medium text-lg hover:font-bold transition-all duration-300">
+                  About
+                </li>
+              </Link>
+              <Link href="/contact">
+                <li className="font-medium text-lg hover:font-bold transition-all duration-300">
+                  Contact
+                </li>
+              </Link>
+            </div>
+          </NavigationMenuList>
+        </NavigationMenu>
         <Link
           href="/"
-          className={`inherit absolute lg:left-1/2 lg:-translate-x-1/2 scale-50 left-5 lg:scale-100 ${
+          className={`inherit z-50 absolute lg:left-1/2 lg:-translate-x-1/2 scale-50 left-5 lg:scale-100 ${
             smallLogo
               ? "lg:h-[6rem] lg:top-[0.5rem] -top-6"
               : "h-auto lg:top-4 -top-6"

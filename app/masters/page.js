@@ -221,7 +221,58 @@ const content = [
     ),
   },
 ];
+const IncludedItemsCol3 = [
+  {
+    title: "Accommodation",
+    items: [
+      "Fully furnished modern housing",
+      "24//7 security and emergency support",
+      "Access to gym and common areas",
+      "Laundry services",
+      "Wi-Fi and utilities included",
+      "Proximity to training facilities and city amenities",
+      "Proximity to world-class public transport",
+    ],
+  },
 
+  {
+    title: "Health & Safety",
+    items: [
+      "Health insurance coverage",
+      "Access to medical support and physiotherapy",
+      "24/7 emergency assistance",
+    ],
+  },
+  {
+    title: "Transportation",
+    items: [
+      "Airport pick-up and drop-off",
+      "Local transportation for matches",
+      "Unlimited use public transport cards",
+    ],
+  },
+];
+const IncludedItemsCol2 = [
+  {
+    title: "Education",
+    items: [
+      "Master’s Degree of your choice (Teaching Spanish, MBA, or Sports Management)",
+      "Spanish Language and Cultural Course – Intensive program for language mastery",
+      "TEFL Course – Teaching qualification for global career opportunities",
+      "Advanced tactical and technical football workshops",
+      "Workshops on leadership, management, and professional development",
+      "Career mentorship for pathways in sports, business, and education",
+    ],
+  },
+  {
+    title: "Meals",
+    items: [
+      "Nutritious meal plans designed for athletes",
+      "Daily breakfast, lunch, and dinner",
+      "Personalized dietary accommodations",
+    ],
+  },
+];
 const IncludedItems = [
   {
     title: "Football",
@@ -244,37 +295,7 @@ const IncludedItems = [
       "Immersive cultural experiences",
     ],
   },
-  {
-    title: "Education",
-    items: [
-      "Master’s Degree of your choice (Teaching Spanish, MBA, or Sports Management)",
-      "Spanish Language and Cultural Course – Intensive program for language mastery",
-      "TEFL Course – Teaching qualification for global career opportunities",
-      "Advanced tactical and technical football workshops",
-      "Workshops on leadership, management, and professional development",
-      "Career mentorship for pathways in sports, business, and education",
-    ],
-  },
-  {
-    title: "Accommodation",
-    items: [
-      "Fully furnished modern housing",
-      "24//7 security and emergency support",
-      "Access to gym and common areas",
-      "Laundry services",
-      "Wi-Fi and utilities included",
-      "Proximity to training facilities and city amenities",
-      "Proximity to world-class public transport",
-    ],
-  },
-  {
-    title: "Meals",
-    items: [
-      "Nutritious meal plans designed for athletes",
-      "Daily breakfast, lunch, and dinner",
-      "Personalized dietary accommodations",
-    ],
-  },
+
   {
     title: "VISA",
     items: [
@@ -282,22 +303,6 @@ const IncludedItems = [
       "Complete guidance throughout the visa process",
       "TIE (residence card) acquirement after arrival in Spain",
       "Assistance with required documentation",
-    ],
-  },
-  {
-    title: "Health & Safety",
-    items: [
-      "Health insurance coverage",
-      "Access to medical support and physiotherapy",
-      "24/7 emergency assistance",
-    ],
-  },
-  {
-    title: "Transportation",
-    items: [
-      "Airport pick-up and drop-off",
-      "Local transportation for matches",
-      "Unlimited use public transport cards",
     ],
   },
 ];
@@ -347,12 +352,12 @@ export default function page() {
             opportunities—on and off the pitch.
           </p>
           <div className="flex gap-4 mt-2 lg:mt-4">
-            <Link
+            {/* <Link
               href={"#about"}
               className="py-3 px-3 lg:px-8 font-ethn border-2 border-white font-thin  lg:text-xl"
             >
               Learn More
-            </Link>
+            </Link> */}
             <Link
               href={"/apply"}
               className="py-3 px-3 lg:px-8 font-ethn bg-white font-light text-black lg:text-xl hover:scale-105 transition-all duration-300"
@@ -475,21 +480,55 @@ export default function page() {
         <h2 className="lg:text-4xl text-xl font-ethn text-left w-full">
           What&apos;s Included in the Master&apos;s Program
         </h2>
-        <div className="flex flex-col lg:h-[80vh] gap-y-4 gap-x-2 lg:flex-wrap max-w-full mt-10">
-          {IncludedItems.map((item, index) => (
-            <div className="flex-col flex" key={item.title + index}>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              {item.items.map((item, index) => (
-                <p
-                  className="text-lg flex gap-2 text-wrap lg:max-w-[25vw]"
-                  key={item + index}
-                >
-                  <Shield className="w-5 h-5 " />
-                  {item}
-                </p>
-              ))}
-            </div>
-          ))}
+        <div className="w-full px-4 flex gap-4 flex-col lg:flex-row">
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+            {IncludedItems.map((item, index) => (
+              <div className="flex-col flex" key={item.title + index}>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                {item.items.map((item, index) => (
+                  <p
+                    className="text-lg flex gap-2 text-wrap "
+                    key={item + index}
+                  >
+                    <Shield className="w-5 h-5 " />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+            {IncludedItemsCol2.map((item, index) => (
+              <div className="flex-col flex" key={item.title + index}>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                {item.items.map((item, index) => (
+                  <p
+                    className="text-lg flex gap-2 text-wrap "
+                    key={item + index}
+                  >
+                    <Shield className="w-5 h-5 " />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+            {IncludedItemsCol3.map((item, index) => (
+              <div className="flex-col flex" key={item.title + index}>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                {item.items.map((item, index) => (
+                  <p
+                    className="text-lg flex gap-2 text-wrap "
+                    key={item + index}
+                  >
+                    <Shield className="w-5 h-5 " />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       {/*Application Process */}

@@ -152,6 +152,61 @@ const content = [
   },
 ];
 
+const IncludedItemsCol3 = [
+  {
+    title: "Accommodation",
+    items: [
+      "Fully furnished modern housing",
+      "24//7 security and emergency support",
+      "Access to gym and common areas",
+      "Laundry services",
+      "Wi-Fi and utilities included",
+      "Proximity to training facilities and city amenities",
+      "Proximity to world-class public transport",
+    ],
+  },
+
+  {
+    title: "Health & Safety",
+    items: [
+      "Health insurance coverage",
+      "Access to medical support and physiotherapy",
+      "24/7 emergency assistance",
+    ],
+  },
+  {
+    title: "Transportation",
+    items: [
+      "Airport pick-up and drop-off",
+      "Local transportation for matches",
+      "Unlimited use public transport cards",
+    ],
+  },
+];
+
+const IncludedItemsCol2 = [
+  {
+    title: "Education",
+    items: [
+      "Spanish Language and Cultural Course – Preparation for Instituto Cervantes certification",
+      "TEFL Course – Gain teaching skills to become a foreign language instructor",
+      "Workshops on nutrition, injury prevention, and sports performance",
+      "Tactical and technical football workshops",
+      "Sports psychology and mindset coaching",
+      "Career development and mentorship sessions",
+      "18 transferable credits towards future education",
+    ],
+  },
+  {
+    title: "Meals",
+    items: [
+      "Nutritious meal plans designed for athletes",
+      "Daily breakfast, lunch, and dinner",
+      "Personalized dietary accommodations",
+    ],
+  },
+];
+
 const IncludedItems = [
   {
     title: "Football",
@@ -175,60 +230,12 @@ const IncludedItems = [
     ],
   },
   {
-    title: "Education",
-    items: [
-      "Spanish Language and Cultural Course – Preparation for Instituto Cervantes certification",
-      "TEFL Course – Gain teaching skills to become a foreign language instructor",
-      "Workshops on nutrition, injury prevention, and sports performance",
-      "Tactical and technical football workshops",
-      "Sports psychology and mindset coaching",
-      "Career development and mentorship sessions",
-      "18 transferable credits towards future education",
-    ],
-  },
-  {
-    title: "Accommodation",
-    items: [
-      "Fully furnished modern housing",
-      "24//7 security and emergency support",
-      "Access to gym and common areas",
-      "Laundry services",
-      "Wi-Fi and utilities included",
-      "Proximity to training facilities and city amenities",
-      "Proximity to world-class public transport",
-    ],
-  },
-  {
-    title: "Meals",
-    items: [
-      "Nutritious meal plans designed for athletes",
-      "Daily breakfast, lunch, and dinner",
-      "Personalized dietary accommodations",
-    ],
-  },
-  {
     title: "VISA",
     items: [
       "Visa processing fees",
       "Complete guidance throughout the visa process",
       "TIE (residence card) acquirement after arrival in Spain",
       "Assistance with required documentation",
-    ],
-  },
-  {
-    title: "Health & Safety",
-    items: [
-      "Health insurance coverage",
-      "Access to medical support and physiotherapy",
-      "24/7 emergency assistance",
-    ],
-  },
-  {
-    title: "Transportation",
-    items: [
-      "Airport pick-up and drop-off",
-      "Local transportation for matches",
-      "Unlimited use public transport cards",
     ],
   },
 ];
@@ -422,21 +429,55 @@ export default function page() {
         <h2 className="lg:text-4xl text-xl font-ethn text-left w-full">
           What&apos;s Included in the Gap-year Program
         </h2>
-        <div className="flex flex-col lg:h-[80vh] gap-y-4 gap-x-2 lg:flex-wrap max-w-full mt-10">
-          {IncludedItems.map((item, index) => (
-            <div className="flex-col flex" key={item.title + index}>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              {item.items.map((item, index) => (
-                <p
-                  className="text-lg flex gap-2 text-wrap lg:max-w-[25vw]"
-                  key={item + index}
-                >
-                  <Shield className="w-5 h-5 " />
-                  {item}
-                </p>
-              ))}
-            </div>
-          ))}
+        <div className="w-full px-4 flex gap-4 flex-col lg:flex-row">
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+            {IncludedItems.map((item, index) => (
+              <div className="flex-col flex" key={item.title + index}>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                {item.items.map((item, index) => (
+                  <p
+                    className="text-lg flex gap-2 text-wrap "
+                    key={item + index}
+                  >
+                    <Shield className="w-5 h-5 " />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+            {IncludedItemsCol2.map((item, index) => (
+              <div className="flex-col flex" key={item.title + index}>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                {item.items.map((item, index) => (
+                  <p
+                    className="text-lg flex gap-2 text-wrap "
+                    key={item + index}
+                  >
+                    <Shield className="w-5 h-5 " />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+            {IncludedItemsCol3.map((item, index) => (
+              <div className="flex-col flex" key={item.title + index}>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                {item.items.map((item, index) => (
+                  <p
+                    className="text-lg flex gap-2 text-wrap "
+                    key={item + index}
+                  >
+                    <Shield className="w-5 h-5 " />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       {/*Application Process */}

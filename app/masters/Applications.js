@@ -16,7 +16,7 @@ export default function ApplicationProcess() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "bottom 70%",
-        toggleActions: "play none reverse none",
+        toggleActions: "play none none none",
         //markers: true,
       },
       stagger: 0.1,
