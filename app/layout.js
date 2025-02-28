@@ -24,16 +24,9 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics gaId="G-SYNVHLLMPP" />
       </head>
       <body className={`${Clash.className}  antialiased bg-black`}>
-        {process.env.NEXT_PUBLIC_COMING_SOON === "true" ? (
-          <ComingSoon />
-        ) : (
-          <>
-            {" "}
-            <Nav /> {children}
-            <Footer />{" "}
-          </>
-        )}
-
+        {" "}
+        <Nav /> {children}
+        <Footer />{" "}
         <Toaster
           toastOptions={{
             // Define default options
