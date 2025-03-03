@@ -296,7 +296,7 @@ export default function page() {
       {/*About Section */}
       <section className="lg:h-screen w-screen relative lg:py-0 py-10 flex items-center justify-center flex-col-reverse lg:flex-row px-4 lg:px-0">
         <Image
-          src={"/images/Background2.png"}
+          src={"/images/background2.png"}
           className="w-full h-full hidden lg:block"
           fill
           alt="Gap year program background hidden"
