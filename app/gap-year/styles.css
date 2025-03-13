@@ -134,3 +134,39 @@
     border-width: 0 2.5rem 2.5rem 0;
     border-color: transparent black transparent transparent;
 }
+
+
+.testing{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "col1 col2  col3"
+    "col1 col2  col3"
+    "col1 price price";
+}.column-1{
+    grid-area: col1;
+}
+.column-2{
+    grid-area: col2;
+}
+.column-3{
+    grid-area: col3;
+}
+.price{
+    grid-area: price;
+}
+
+
+@media (max-width: 768px) {
+    .testing {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "col1"
+        "col2"
+        "col3"
+        "price";
+    }
+}

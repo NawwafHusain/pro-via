@@ -48,7 +48,7 @@ export default function Home() {
                   href={"/apply"}
                   className="w-max py-3 px-3 lg:px-5 font-ethn bg-white font-light text-black lg:text-lg hover:scale-105 transition-all duration-300"
                 >
-                  Apply Now
+                  Inquire Now
                 </Link>
               </div>
             </CarouselItem>
@@ -83,7 +83,7 @@ export default function Home() {
                   href={"/apply"}
                   className="w-max py-3 px-3 lg:px-5 font-ethn bg-white font-light text-black lg:text-lg hover:scale-105 transition-all duration-300"
                 >
-                  Apply Now
+                  Inquire Now
                 </Link>
               </div>
             </CarouselItem>

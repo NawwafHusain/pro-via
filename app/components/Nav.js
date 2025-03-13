@@ -144,7 +144,7 @@ export default function Nav() {
           onClick={() => setOpened(false)}
           className="font-semibold py-2 px-4 bg-black text-white lg:absolute lg:right-4 lg:text-xl"
         >
-          Apply Now
+          Inquire Now
         </Link>
         <button
           className={`menu ${opened ? "opened" : ""} lg:hidden z-[100] `}
@@ -187,7 +187,7 @@ export default function Nav() {
             </Link>
             <Link href="/apply" onClick={() => setOpened(false)}>
               <li className="font-semibold py-2 px-4 bg-black text-white">
-                Apply Now
+                Inquire Now
               </li>
             </Link>
           </ul>

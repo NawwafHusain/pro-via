@@ -9,7 +9,7 @@ export default function page() {
       {/* <h1 className="text-white text-5xl font-ethn mb-10">APPLICATION FORM</h1> */}
       <div className="w-full h-full relative overflow-scroll">
         <Widget
-          id="mGSkOqIn"
+          id="n1MVES0f"
           className="w-full h-full rounded-none "
           inlineOnMobile
         />

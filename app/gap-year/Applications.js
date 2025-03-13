@@ -40,10 +40,10 @@ export default function ApplicationProcess() {
           <span className="font-ethn lg:text-8xl  text-5xl mb-10 mt-5">1</span>
 
           <p className="text-sm">
-            <span className="text-lg font-semibold">Application</span>
+            <span className="text-lg font-semibold">Inquire Now</span>
             <br />
-            Submit your application and supporting documents. Our team will
-            review your application and notify you of the outcome.
+            Inquire Now using our online form and our recruitment team will
+            reach out to you.
           </p>
         </div>
         <div
@@ -53,9 +53,9 @@ export default function ApplicationProcess() {
           {" "}
           <span className="mb-10 mt-5 font-ethn lg:text-8xl text-5xl ">2</span>
           <p className="text-sm">
-            <span className="text-lg font-semibold">Enrollment</span>
+            <span className="text-lg font-semibold">Pre-screen interview</span>
             <br />
-            Receive your acceptance letter and start the visa process
+            Our team will schedule a quick pre screening interview with you
           </p>
         </div>
         <div
@@ -65,10 +65,10 @@ export default function ApplicationProcess() {
           {" "}
           <span className="mb-10 mt-5 font-ethn lg:text-8xl text-5xl ">3</span>
           <p className="text-sm">
-            <span className="text-lg font-semibold">Arrival</span>
+            <span className="text-lg font-semibold">Application</span>
             <br />
-            Arrive in Madrid on Aug 10th where we will pick you up and help you
-            get adjusted
+            Upon successful completion of the pre-screen interview, you will
+            receive an email with a link to the application form.
           </p>
         </div>
         <div
@@ -78,10 +78,12 @@ export default function ApplicationProcess() {
           {" "}
           <span className="mb-10 mt-5 font-ethn lg:text-8xl text-5xl ">4</span>
           <p className="text-sm">
-            <span className="text-lg font-semibold">Development</span>
+            <span className="text-lg font-semibold">
+              Acceptance & Enrollment
+            </span>
             <br />
-            Our sport directors will be creating development plans for each
-            player and monitor their development
+            Once we review your application and you are accepted, you will be
+            enrolled and start the visa application process.
           </p>
         </div>
         <div
@@ -91,17 +93,16 @@ export default function ApplicationProcess() {
           {" "}
           <span className="mb-10 mt-5 font-ethn lg:text-8xl text-5xl ">5</span>
           <p className="text-sm">
-            <span className="text-lg font-semibold">Commitment</span>
+            <span className="text-lg font-semibold">Arrival</span>
             <br />
-            Our Sport directors in the USA will market your player profile and
-            help you get commitments at top Universities or pro teams.
+            Arrival in Spain and start your gap year program!
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent to-25% hidden lg:block" />
       </div>
       <Link href={"/gap-year/apply"} className="mt-10 lg:mb-0 mb-10">
         <button className="bg-white text-black px-8 py-4 font-ethn text-2xl mt-10">
-          Apply Now
+          Inquire Now
         </button>
       </Link>
     </section>

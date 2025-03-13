@@ -362,7 +362,7 @@ export default function page() {
               href={"/apply"}
               className="py-3 px-3 lg:px-8 font-ethn bg-white font-light text-black lg:text-xl hover:scale-105 transition-all duration-300"
             >
-              Apply Now
+              Inquire Now
             </Link>
           </div>
         </div>
@@ -480,8 +480,8 @@ export default function page() {
         <h2 className="lg:text-4xl text-xl font-ethn text-left w-full">
           What&apos;s Included in the Master&apos;s Program
         </h2>
-        <div className="w-full px-4 flex gap-4 flex-col lg:flex-row">
-          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+        <div className="w-full px-4  gap-4 testing">
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10 column-1">
             {IncludedItems.map((item, index) => (
               <div className="flex-col flex" key={item.title + index}>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
@@ -497,7 +497,7 @@ export default function page() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10 column-2">
             {IncludedItemsCol2.map((item, index) => (
               <div className="flex-col flex" key={item.title + index}>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
@@ -513,7 +513,7 @@ export default function page() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10">
+          <div className="flex flex-col  gap-y-4 gap-x-2  max-w-full lg:max-w-[25vw] mt-10 column-3">
             {IncludedItemsCol3.map((item, index) => (
               <div className="flex-col flex" key={item.title + index}>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
@@ -528,6 +528,18 @@ export default function page() {
                 ))}
               </div>
             ))}
+          </div>
+          <div className="price  flex flex-col justify-start items-center ">
+            <h2 className="lg:text-7xl text-5xl font-ethn w-full text-center h-min">
+              <span className="lg:text-xl text-base font-thin">
+                Program Investment per year
+              </span>
+              <br />
+              68,000€*
+            </h2>
+            <p className="lg:text-xl text-md text-center w-full">
+              *Limited need-base financial grant available{" "}
+            </p>
           </div>
         </div>
       </section>
