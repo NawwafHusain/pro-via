@@ -344,7 +344,7 @@ export default function page() {
             Alex joined Craq FC residency (now Pro-Vía Academy, LLC) for the
             2023/2024 season. He was playing for Tres Cantos CDF senior team in
             the Spanish 3 RFEF leauge. Through Pro-Vía&apos;s deeply rooted
-            network, Alex landed a trail at Phoenix Rising (USL) which he
+            network, Alex landed a trial at Phoenix Rising (USL) which he
             converted into a pro contract.
           </p>
           <div className="flex gap-4 mt-2 lg:mt-4">
