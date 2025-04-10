@@ -31,7 +31,9 @@ export default function Nav() {
   console.log("path", path);
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
-    setSmallLogo(path === "/apply" || path === "/programs");
+    setSmallLogo(
+      path === "/apply" || path === "/programs" || path === "/contact"
+    );
     const width = window.innerWidth;
     gsap.to(navRef.current, {
       scrollTrigger: {
@@ -40,8 +42,8 @@ export default function Nav() {
         end: "end end",
         toggleActions: "play none reverse none",
       },
-      paddingBottom: `${width > 700 ? 1 : 0}rem`,
-      paddingTop: `${width > 700 ? 1 : 0}rem`,
+      // paddingBottom: `${width > 700 ? 1 : 0}rem`,
+      // paddingTop: `${width > 700 ? 1 : 0}rem`,
     });
     gsap.to(listRef.current, {
       scrollTrigger: {
@@ -50,7 +52,6 @@ export default function Nav() {
         end: "end end",
         toggleActions: "play none reverse none",
       },
-      width: "28vw",
     });
     gsap.to(logoRef.current, {
       scrollTrigger: {
@@ -71,60 +72,9 @@ export default function Nav() {
         className="w-screen bg-white lg:py-5 py-1 pr-2 lg:p-0 fixed z-50 flex lg:flex-row flex-row lg:justify-center items-center  justify-end"
         ref={navRef}
       >
-        <NavigationMenu>
-          <NavigationMenuList
-            className="w-[34vw] lg:flex justify-between h-full z-10 hidden bg-transparent"
-            ref={listRef}
-          >
-            <div className="flex items-center gap-5">
-              <Link href="/">
-                <li className="font-medium text-lg hover:font-bold transition-all duration-300">
-                  Home
-                </li>
-              </Link>
-
-              <NavigationMenuItem className="relative w-min bg-transparent hover:bg-transparent">
-                <Link href={"/programs"}>
-                  <NavigationMenuTrigger className="font-medium text-lg hover:font-bold transition-all duration-300 hover:bg-white">
-                    Programs
-                  </NavigationMenuTrigger>
-                </Link>
-                <NavigationMenuContent className="flex flex-col gap-3 w-max-content  rounded-none bg-white ">
-                  <Link
-                    href={"/gap-year"}
-                    className="w-max hover:bg-slate-200 px-4 py-2"
-                  >
-                    <NavigationMenuLink>Gap Year Program</NavigationMenuLink>
-                  </Link>
-
-                  <Link
-                    href={"/masters"}
-                    className="w-max hover:bg-slate-200 px-4 py-2"
-                  >
-                    <NavigationMenuLink>
-                      Master&apos;s Program
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </div>
-            <div className="flex items-center gap-10">
-              <Link href="/about">
-                <li className="font-medium text-lg hover:font-bold transition-all duration-300">
-                  About
-                </li>
-              </Link>
-              <Link href="/contact">
-                <li className="font-medium text-lg hover:font-bold transition-all duration-300">
-                  Contact
-                </li>
-              </Link>
-            </div>
-          </NavigationMenuList>
-        </NavigationMenu>
         <Link
           href="/"
-          className={`inherit z-50 absolute lg:left-1/2 lg:-translate-x-1/2 scale-50 left-5 lg:scale-100 ${
+          className={`inherit z-50 absolute lg:left-40 lg:-translate-x-1/2 scale-50 left-5 lg:scale-100 ${
             smallLogo
               ? "lg:h-[6rem] lg:top-[0.5rem] -top-6"
               : "h-auto lg:top-4 -top-6"
@@ -139,10 +89,66 @@ export default function Nav() {
             ref={logoRef}
           />
         </Link>
+        <NavigationMenu>
+          <NavigationMenuList
+            className=" lg:flex justify-start gap-4 h-full z-10 hidden bg-transparent"
+            ref={listRef}
+          >
+            <Link href="/">
+              <li className="font-medium text-lg hover:font-bold  transition-all duration-300">
+                Home
+              </li>
+            </Link>
+
+            <NavigationMenuItem className="relative w-max bg-transparent hover:bg-transparent mr-0 pr-0">
+              <Link href={"/programs"}>
+                <NavigationMenuTrigger className="font-medium text-lg hover:font-bold  transition-all duration-300 hover:bg-white p-0 rounded-none">
+                  Programs
+                </NavigationMenuTrigger>
+              </Link>
+              <NavigationMenuContent className="flex flex-col gap-3 w-max-content  rounded-none bg-white ">
+                <Link
+                  href={"/gap-year"}
+                  className="w-max hover:bg-slate-200 px-4 py-2"
+                >
+                  <NavigationMenuLink>Gap Year Program</NavigationMenuLink>
+                </Link>
+
+                <Link
+                  href={"/masters"}
+                  className="w-max hover:bg-slate-200 px-4 py-2"
+                >
+                  <NavigationMenuLink>Master&apos;s Program</NavigationMenuLink>
+                </Link>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <Link href="/stories">
+              <li className="font-medium text-lg hover:font-bold  transition-all duration-300">
+                Success Stories
+              </li>
+            </Link>
+            <Link href="/about">
+              <li className="font-medium text-lg hover:font-bold  transition-all duration-300">
+                About
+              </li>
+            </Link>
+            <Link href="/team">
+              <li className="font-medium text-lg hover:font-bold  transition-all duration-300">
+                Team
+              </li>
+            </Link>
+            <Link href="/contact">
+              <li className="font-medium text-lg hover:font-bold  transition-all duration-300">
+                Contact
+              </li>
+            </Link>
+          </NavigationMenuList>
+        </NavigationMenu>
+
         <Link
           href="/apply"
           onClick={() => setOpened(false)}
-          className="font-semibold py-2 px-4 bg-black text-white lg:absolute lg:right-4 lg:text-xl"
+          className="font-semibold py-2 px-4 bg-black text-white lg:absolute lg:right-8 lg:text-xl"
         >
           Inquire Now
         </Link>
@@ -179,8 +185,14 @@ export default function Nav() {
             <Link href="/programs" onClick={() => setOpened(false)}>
               <li className="hover:font-bold">Programs</li>
             </Link>
+            <Link href="/stories" onClick={() => setOpened(false)}>
+              <li className="hover:font-bold">Success Stories</li>
+            </Link>
             <Link href="/about" onClick={() => setOpened(false)}>
               <li className="hover:font-bold">About us</li>
+            </Link>
+            <Link href="/team" onClick={() => setOpened(false)}>
+              <li className="hover:font-bold">Team</li>
             </Link>
             <Link href="/contact" onClick={() => setOpened(false)}>
               <li className="hover:font-bold">Contact</li>
