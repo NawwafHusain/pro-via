@@ -132,11 +132,11 @@ export default function Nav() {
                 About
               </li>
             </Link>
-            <Link href="/team">
+            {/* <Link href="/team">
               <li className="font-medium text-lg hover:font-bold  transition-all duration-300">
                 Team
               </li>
-            </Link>
+            </Link> */}
             <Link href="/contact">
               <li className="font-medium text-lg hover:font-bold  transition-all duration-300">
                 Contact
@@ -191,9 +191,9 @@ export default function Nav() {
             <Link href="/about" onClick={() => setOpened(false)}>
               <li className="hover:font-bold">About us</li>
             </Link>
-            <Link href="/team" onClick={() => setOpened(false)}>
+            {/* <Link href="/team" onClick={() => setOpened(false)}>
               <li className="hover:font-bold">Team</li>
-            </Link>
+            </Link> */}
             <Link href="/contact" onClick={() => setOpened(false)}>
               <li className="hover:font-bold">Contact</li>
             </Link>
