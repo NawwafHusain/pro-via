@@ -10,13 +10,39 @@ import Image from "next/image";
 
 import ContactForm from "./components/contactForm";
 
+const programs = [
+  {
+    title: "Pro-Pathway Program",
+    description:
+      "Enjoy authentic Spanish football while exposing yourself to professional teams in Spain.",
+    CarouselImage: "/images/AlexMadridBlack.png",
+    CarouselMobileImage: "/images/AlexMadridBlackMobile.png",
+
+    ProgramImage: "/images/IMG_5122.JPG",
+    button1Link: "/pro-pathway",
+    button1Text: "Learn More",
+    button2Link: "/pro-pathway#apply",
+    button2Text: "Apply Now",
+  },
+  {
+    title: "Spanish Football Experience",
+    description:
+      "Ecperince real spanish football, this entry program prepares you for the next level of your football career.",
+    CarouselImage: "/images/hero.jpg",
+    ProgramImage: "/images/trescantos.webp",
+    
+    button2Text: "Coming Soon",
+    button2Link: "#",
+  },
+];
+
 export default function Home() {
   return (
     <main>
       <section className="w-screen h-[90vh] py-10">
-        <Carousel className="w-full h-full text-white lg:px-24 px-4 relative">
-          <CarouselContent className="-m-4 lg:-ml-24 h-full relative">
-            <CarouselItem className="relative p-5 flex flex-col lg:flex-row lg:justify-between justify-end items-center lg:items-end pl-4 lg:pl-24  h-full ">
+        <Carousel className="w-full h-full text-white lg:px-24 px-4 relative mt-4">
+          <CarouselContent className="-m-4 lg:-ml-24 h-full relative ">
+            {/* <CarouselItem className="relative p-5 flex flex-col lg:flex-row lg:justify-between justify-end items-center lg:items-end pl-4 lg:pl-24  h-full ">
               <Image
                 src={"/images/hero.jpg"}
                 fill
@@ -86,7 +112,57 @@ export default function Home() {
                   Inquire Now
                 </Link>
               </div>
-            </CarouselItem>
+            </CarouselItem> */}
+            {programs.map((program, index) => (
+              <CarouselItem
+                key={index}
+                className="relative p-5 flex flex-col lg:flex-row lg:justify-between lg:justify-end items-center lg:items-end pl-4 lg:pl-24  h-full "
+              >
+                <Image
+                  src={program.CarouselImage}
+                  fill
+                  alt="hero"
+                  className="object-cover  lg:content-center object-right hidden lg:block"
+                />
+                <Image
+                  src={program.CarouselMobileImage || program.CarouselImage}
+                  fill
+                  alt="hero"
+                  className="object-cover  lg:content-center object-right block lg:hidden"
+                />
+                {/* <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div> */}
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b  lg:bg-gradient-to-r from-black "></div>
+                <div className="flex flex-col gap-2 py-4 lg:py-10 lg:pl-10 pl-4 relative">
+                  <p className="text-xl">The Pro-Vía Academy</p>
+                  <h2 className={`font-ethn text-2xl lg:text-5xl`}>
+                    {program.title}
+                  </h2>
+                  <p className="lg:w-[60%] w-[100%]">{program.description}</p>
+                </div>
+                <div className="flex gap-1 relative lg:py-10 lg:pr-10 ">
+                  {console.log("program", program.title, "  link", program.button1Link)}
+                  {program.button1Link && (
+                    
+                    <Link
+                      href={program.button1Link}
+                      className="w-max py-3 px-3 lg:px-5 font-ethn border-2 border-white font-thin  lg:text-lg"
+                    >
+                      {program.button1Text}
+                    </Link>
+                  )}
+
+                  {program.button2Text && program.button2Link && (
+                    
+                    <Link
+                      href={program.button2Link}
+                      className="w-max py-3 px-3 lg:px-5 font-ethn bg-white font-light text-black lg:text-lg hover:scale-105 transition-all duration-300"
+                    >
+                      {program.button2Text}
+                    </Link>
+                  )}
+                </div>
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselNext className="top-1/2 -translate-y-1/2 right-4 lg:right-24 z-10 " />
           <CarouselPrevious className="top-1/2 -translate-y-1/2 left-4 lg:left-24 z-10 " />
@@ -126,7 +202,49 @@ export default function Home() {
           Our Programs
         </h2>
         <div className="w-full flex lg:flex-row flex-col justify-between gap-8 lg:h-[40vh] ">
-          <Link
+          {programs.map((program, index) => (
+            program.button1Link ? (  <Link
+              key={index}
+              href={program.button1Link || "#"}
+
+              className=" hover:scale-105 transition-all  duration-300 flex-1 overflow-clip items-center rounded-xl px-4 lg:px-10 text-center shadow-white shadow-sm text-white flex justify-end lg:gap-4 gap-2 pb-4 pt-24 lg:pt-0 lg:pb-10 flex-col relative"
+            >
+              <Image
+                fill
+                className="object-cover"
+                src={program.ProgramImage}
+                alt={program.title}
+              />
+              <div className="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-black to-transparent from-30% " />
+              <h3 className={`relative font-ethn text-xl lg:text-4xl`}>
+                {program.title}
+              </h3>
+              <p className="relative text-sm lg:text-base">
+                {program.description}
+              </p>
+            </Link>):(  <div
+              key={index}
+
+              className=" hover:scale-105 transition-all  duration-300 flex-1 overflow-clip items-center rounded-xl px-4 lg:px-10 text-center shadow-white shadow-sm text-white flex justify-end lg:gap-4 gap-2 pb-4 pt-24 lg:pt-0 lg:pb-10 flex-col relative"
+            >
+              <Image
+                fill
+                className="object-cover"
+                src={program.ProgramImage}
+                alt={program.title}
+              />
+              <div className="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-black to-transparent from-30% " />
+              <h3 className={`relative font-ethn text-xl lg:text-4xl`}>
+                {program.title}
+              </h3>
+              <p className="relative text-sm lg:text-base">
+                {program.description}
+              </p>
+            </div>)
+          
+          ))}
+
+          {/* <Link
             href="/gap-year"
             className=" hover:scale-105 transition-all  duration-300 flex-1 overflow-clip items-center rounded-xl px-4 lg:px-10 text-center shadow-white shadow-sm text-white flex justify-end lg:gap-4 gap-2 pb-4 pt-24 lg:pt-0 lg:pb-10 flex-col relative"
           >
@@ -166,7 +284,7 @@ export default function Home() {
               of Spanish football for a two seasons while earning your masters
               degree!
             </p>
-          </Link>
+          </Link> */}
           {/* <Link
             href="/programs"
             className=" hover:scale-105 transition-all duration-300 flex-2 text-xl lg:text-4xl overflow-clip items-center rounded-xl px-10 text-center shadow-white shadow-sm text-white flex justify-center gap-4 lg:pt-0 pb-10 pt-10 lg:pb-10 flex-col relative"

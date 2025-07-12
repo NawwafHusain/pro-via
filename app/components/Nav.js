@@ -45,24 +45,24 @@ export default function Nav() {
       // paddingBottom: `${width > 700 ? 1 : 0}rem`,
       // paddingTop: `${width > 700 ? 1 : 0}rem`,
     });
-    gsap.to(listRef.current, {
-      scrollTrigger: {
-        trigger: triggerRef.current,
-        start: "50% top",
-        end: "end end",
-        toggleActions: "play none reverse none",
-      },
-    });
-    gsap.to(logoRef.current, {
-      scrollTrigger: {
-        trigger: triggerRef.current,
-        start: "50% top",
-        end: "end end",
-        toggleActions: "play none reverse none",
-      },
-      height: `${width > 700 && "6rem"}`,
-      top: `${width > 700 ? "0.5rem" : "-1.6rem"}`,
-    });
+    // gsap.to(listRef.current, {
+    //   scrollTrigger: {
+    //     trigger: triggerRef.current,
+    //     start: "50% top",
+    //     end: "end end",
+    //     toggleActions: "play none reverse none",
+    //   },
+    // });
+    // gsap.to(logoRef.current, {
+    //   scrollTrigger: {
+    //     trigger: triggerRef.current,
+    //     start: "50% top",
+    //     end: "end end",
+    //     toggleActions: "play none reverse none",
+    //   },
+    //   height: `${width > 700 && "6rem"}`,
+    //   top: `${width > 700 ? "0.5rem" : "-1.6rem"}`,
+    // });
   });
 
   return (
@@ -74,16 +74,16 @@ export default function Nav() {
       >
         <Link
           href="/"
-          className={`inherit z-50 absolute lg:left-40 lg:-translate-x-1/2 scale-50 left-5 lg:scale-100 ${
+          className={`inherit z-50 absolute lg:left-40 lg:-translate-x-1/2 lg:h-[6rem] scale-50 left-5 lg:scale-100 ${
             smallLogo
-              ? "lg:h-[6rem] lg:top-[0.5rem] -top-6"
-              : "h-auto lg:top-4 -top-6"
+              ? "lg:h-[3rem] lg:top-[0.5rem] -top-6"
+              : "h-auto lg:top-4 -top-6 lg:h-[3rem]"
           }`}
         >
           <Image
             src="/images/NavBarLogoW.png"
-            width={100}
-            height={100}
+            width={67}
+            height={67}
             className={`object-contain    `}
             alt="Pro-Vía Academy Nav bar logo"
             ref={logoRef}
@@ -108,18 +108,18 @@ export default function Nav() {
               </Link>
               <NavigationMenuContent className="flex flex-col gap-3 w-max-content  rounded-none bg-white ">
                 <Link
-                  href={"/gap-year"}
+                  href={"/pro-pathway"}
                   className="w-max hover:bg-slate-200 px-4 py-2"
                 >
-                  <NavigationMenuLink>Gap Year Program</NavigationMenuLink>
+                  <NavigationMenuLink>Pro Pathway</NavigationMenuLink>
                 </Link>
 
-                <Link
-                  href={"/masters"}
+                {/* <Link
+                  href={"/spanish-experience"}
                   className="w-max hover:bg-slate-200 px-4 py-2"
                 >
-                  <NavigationMenuLink>Master&apos;s Program</NavigationMenuLink>
-                </Link>
+                  <NavigationMenuLink>Spanish Experience</NavigationMenuLink>
+                </Link> */}
               </NavigationMenuContent>
             </NavigationMenuItem>
             <Link href="/stories">
@@ -145,13 +145,13 @@ export default function Nav() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Link
+        {/* <Link
           href="/apply"
           onClick={() => setOpened(false)}
           className="font-semibold py-2 px-4 bg-black text-white lg:absolute lg:right-8 lg:text-xl"
         >
           Inquire Now
-        </Link>
+        </Link> */}
         <button
           className={`menu ${opened ? "opened" : ""} lg:hidden z-[100] `}
           onClick={() => {
@@ -197,11 +197,11 @@ export default function Nav() {
             <Link href="/contact" onClick={() => setOpened(false)}>
               <li className="hover:font-bold">Contact</li>
             </Link>
-            <Link href="/apply" onClick={() => setOpened(false)}>
+            {/* <Link href="/apply" onClick={() => setOpened(false)}>
               <li className="font-semibold py-2 px-4 bg-black text-white">
                 Inquire Now
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </nav>

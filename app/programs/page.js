@@ -4,6 +4,32 @@ import Link from "next/link";
 
 const programs = [
   {
+    title: "Pro-Pathway Program",
+    hook: "The Pro-Vía Academy",
+    duration: "28 days",
+    ageGroup: "18+",
+    description: "Enjoy authentic Spanish football while exposing yourself to professional teams in Spain.",
+    CarouselImage: "/images/hero.jpg",
+    ProgramImage: "/images/IMG_5122.JPG",
+    link: "/pro-pathway",
+    buttonText: "Learn More",
+    buttonLink: "/apply",
+   },
+  // {
+  //   title: "Spanish Football Experience",
+  //   hook: "The Pro-Vía Academy",
+  //   duration: "21 days",
+  //   ageGroup: "16-18",	
+  //   description: "Ecperince real spanish football, this entry program prepares you for the next level of your football career.",
+  //   CarouselImage: "/images/hero.jpg",
+  //   ProgramImage: "/images/trescantos.webp",
+  //   link: "/spanish-experience",
+  //   buttonText: "Learn More",
+  //   buttonLink: "/apply",
+  // },
+]
+const ssprograms = [
+  {
     image: "/images/hero.jpg",
     hook: "The Pro-Vía Academy",
     title: "Gap Year Program",
@@ -27,7 +53,7 @@ export default function Page() {
   return (
     <main className=" px-4 lg:px-24  relative bg-black py-10 w-screen overflow-hidden">
       <h1
-        className={`text-2xl lg:text-5xl font-ethn  mt-4 text-white relative`}
+        className={`text-2xl lg:text-5xl font-ethn  mt-8 text-white relative`}
       >
         Find the Right <br /> Program for You
       </h1>
@@ -38,7 +64,7 @@ export default function Page() {
             key={index}
           >
             <Image
-              src={program.image}
+              src={program.ProgramImage}
               fill
               alt="hero"
               className="object-cover hero-carousel-item"
@@ -52,6 +78,10 @@ export default function Page() {
               <p className="lg:w-[60%] lg:text-base text-sm">
                 {program.description}
               </p>
+              <div className="flex gap-2 justify-between lg:w-[50%] flex-col lg:flex-row">
+                <p className="text-lg"><span className="font-ethn">Age Group:</span> <br/> {program.ageGroup}</p>
+                <p className="text-lg"><span className="font-ethn">Duration:</span> <br/> {program.duration}</p>
+              </div>
             </div>
             <div className="flex gap-1 relative lg:py-10 lg:pr-10 py-4">
               <Link

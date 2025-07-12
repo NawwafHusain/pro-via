@@ -42,10 +42,16 @@ export default function Footer() {
               Home
             </Link>
             <Link
-              href="/gap-year"
+              href="/pro-pathway"
               className="border-b-2 hover:border-b-white border-b-transparent"
             >
-              Gap Year Program
+                Pro-Pathway Program
+              </Link>
+              <Link
+                href="/spanish-experience"
+                className="border-b-2 hover:border-b-white border-b-transparent"
+              >
+                Spanish Football Experience
             </Link>
             <Link
               href="/about"
