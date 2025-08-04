@@ -109,10 +109,7 @@ export default function Page() {
               <Mail />
               sales@pro-viaacademy.com
             </a>
-            <a href="tel:+19496973609" className="flex gap-2">
-              <Phone />
-              +1 949 697 3609
-            </a>
+           
           </div>
           <div className="flex flex-col gap-2  p-4 border-l-2 border-white ">
             <p className="font-semibold text-2xl mb-2">Mailing Address </p>
